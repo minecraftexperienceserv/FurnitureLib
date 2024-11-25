@@ -1,6 +1,7 @@
 package de.Ste3et_C0st.FurnitureLib.main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.command.CommandSender;
@@ -28,8 +29,8 @@ public class PermissionHandler {
             if (sender.hasPermission("furniture.admin")) return true;
             return sender.hasPermission(str);
         } else {
-            if (permission.has(sender, "furniture.admin")) return true;
-            return permission.has(sender, str);
+            if (permission.playerHas((Player) sender, "furniture.admin")) return true;
+            return permission.playerHas((Player) sender, str);
         }
     }
     
@@ -39,7 +40,7 @@ public class PermissionHandler {
         if (VaultInstalled == false) {
         	return sender.hasPermission(str);
         }else {
-        	return permission.has(sender, str);
+        	return permission.playerHas((Player) sender, str);
         }
     }
 

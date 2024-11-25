@@ -21,6 +21,7 @@ dependencies {
     implementation project(path: ':FurnitureLib-Core', configuration: 'shadow')
     implementation project(path: ':FurnitureLib-Paper')
     implementation project(path: ':FurnitureLib-Folia')
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
 }
 
 tasks {
